@@ -47,7 +47,7 @@ public class ArraysDemo {
 		Stream.of("AAA", "BBB", "CCC").parallel().forEachOrdered(s -> System.out.println("Output:" + s));
 
 		
-		//method reference 
+	
 	}
 
 	

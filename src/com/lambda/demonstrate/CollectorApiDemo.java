@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LambdaLogDemo {
+public class CollectorApiDemo {
 
 	public static void main(String[] args) {
 	
@@ -32,21 +32,8 @@ public class LambdaLogDemo {
 //	Collectors.partitioningBy(predicate)
 //		stream.collect(Collectors.groupingBy(m -> m,Collectors.counting()));
 	
-	Supplier<String> sp=()-> "some string"+expensiveOperation();
-	
-	
-	
-	boolean isDebug=true;
-	
-	
-	if(isDebug){
-		System.out.println(sp.get()); 
-	}
-	
 	
 
 	}
-public static String expensiveOperation(){
-	return "expensive operation";
-}
+
 }

@@ -14,6 +14,11 @@ import static java.util.stream.Collectors.toList;
 public class StreamDemo {
 
 	public static void main(String[] args) {
+		
+		List<Artist> artists=Arrays.asList(new Artist("a"),new Artist("a"),new Artist("a"));
+		String result =artists.stream()
+                .map(Artist::getName)
+                .collect(Collectors.joining(", ", "[", "]"));
 
 		// demo1 map
 		List<String> collected = new ArrayList<>();
@@ -70,7 +75,7 @@ public class StreamDemo {
 		for (Integer element : asList(1, 2, 3)) {
 		acc1 = acc1 + element;
 		}
-		System.out.println(acc1);
+		System.out.println("acc1:"+acc1);
 		
 		int startValue=0;
 		int count = Stream.of(1, 2, 3)
@@ -92,7 +97,7 @@ public class StreamDemo {
 		//demo6  method reference
 		
 	String names=Arrays.asList(new Artist("a"),new Artist("b"),new Artist("c")).stream()
-			.map(Artist::getName)
+			.map(Artist::getName)//.map(artist->argist.getName())
 			.collect(Collectors.toList()).toString();
 		System.out.println(names);
 		

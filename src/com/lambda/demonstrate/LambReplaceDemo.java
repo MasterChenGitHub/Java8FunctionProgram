@@ -4,6 +4,9 @@ public class LambReplaceDemo {
 
 	public static void main(String[] args) {
 		
+		
+		new Thread(()->System.out.println("hi thread")).start();
+		
 	
 		setListener(new OnSomeStringListener(){
 			 public String onAction(String param){
