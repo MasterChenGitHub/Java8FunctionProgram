@@ -7,13 +7,14 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LambdaDemo {
+public class LambdaLogDemo {
 
 	public static void main(String[] args) {
 	
 		
 	String s="hellHHadfQQ";
-	long count=s.chars().filter(c -> c>97&&c<122).count();
+	long count=s.chars().filter(c -> Character.isUpperCase(c)).count();
+	System.out.println(s+" upper case count:"+count);
 	
 	
 	Stream<String> stream=Stream.of("a","b","c");
@@ -29,7 +30,7 @@ public class LambdaDemo {
 	
 	System.out.println("max:"+stream.collect(Collectors.maxBy(Comparator.comparing(t -> t.hashCode()))).get());
 //	Collectors.partitioningBy(predicate)
-		stream.collect(Collectors.groupingBy(m -> m,Collectors.counting()));
+//		stream.collect(Collectors.groupingBy(m -> m,Collectors.counting()));
 	
 	Supplier<String> sp=()-> "some string"+expensiveOperation();
 	
